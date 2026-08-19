@@ -85,13 +85,12 @@ const authConfig = {
       "password": "admin123",
     }
   ],
-  "roots": [      {
+  "roots":{
         "id": "1lw4nykvjTl5HIvLn3Mf_7Qm1yzCFY82g",
         "name": "MSC-CSE-IU-Materials \u{1F513}",
         "slug": "msc",
         "protect_file_link": false
-      },
-  ]
+      }
 };
 const crypto_base_key = "3225f86e99e205347b4310e437253bfd"; // Example 256 bit key used, generate your own.
 const hmac_base_key = "4d1fbf294186b82d74fff2494c04012364200263d6a36123db0bd08d6be1423c"; // Example 256 bit key used, generate your own.
