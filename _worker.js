@@ -112,7 +112,7 @@ const uiConfig = {
   "logo_width": "100px", // only if logo_image is true
   "favicon": 'https://cdn.jsdelivr.net/npm/@googledrive/index@' + CDN_VERSION + '/images/favicon.ico',
   // if logo is true then link otherwise just text for name
-  "logo_link_name": 'https://cdn.jsdelivr.net/npm/@googledrive/index@' + CDN_VERSION + '/images/bhadoo-cloud-logo-white.svg',
+  "logo_link_name": '',
   "fixed_header": true, // If you want the footer to be flexible or fixed.
   "header_padding": "80", // Value 80 for fixed header, Value 20 for flexible header. Required to be changed accordingly in some themes.
   "nav_link_1": "Home", // change navigation link name
