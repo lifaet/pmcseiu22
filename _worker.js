@@ -67,7 +67,7 @@ const authConfig = {
   "disable_anonymous_download": false, // disables direct links without session
   "file_link_expiry": 7, // expire file link in set number of days
   "search_all_drives": true, // search all of your drives instead of current drive if set to true
-  "enable_login": true, // set to true if you want to add login system
+  "enable_login": false, // set to true if you want to add login system
   "enable_signup": false, // set to true if you want to add signup system
   "enable_social_login": false, // set to true if you want to add social login system
   "google_client_id_for_login": "", // Google Client ID for Login
@@ -85,31 +85,12 @@ const authConfig = {
       "password": "admin123",
     }
   ],
-  "roots": [
-    {
-      "id": "root",
-      "type": "root", // "root" | "folder" | "shared_drive"
-      "name": "My Drive",
-      "protect_file_link": false
-    },
-    {
-      "id": "1a8tF3p6l4wenfEQV5TpGKPT9otfze5em",
-      "type": "folder", // folder inside My Drive
-      "name": "Drive Folder",
-      "protect_file_link": false
-    },
-    {
-      "id": "1SPeBCBNFU3s0m2NPuIJzgyAQTUWU3wMx",
-      "type": "folder", // folder from shared drive context
-      "name": "Shared Folder",
-      "protect_file_link": false
-    },
-    {
-      "id": "0AI96FDDLWPh5Uk9PVA",
-      "type": "shared_drive", // Shared Drive (Team Drive)
-      "name": "Shared Drive",
-      "protect_file_link": false
-    },
+  "roots": [      {
+        "id": "1lw4nykvjTl5HIvLn3Mf_7Qm1yzCFY82g",
+        "name": "MSC-CSE-IU-Materials \u{1F513}",
+        "slug": "msc",
+        "protect_file_link": false
+      },
   ]
 };
 const crypto_base_key = "3225f86e99e205347b4310e437253bfd"; // Example 256 bit key used, generate your own.
