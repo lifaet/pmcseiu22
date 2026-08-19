@@ -1,0 +1,619 @@
+
+--- 2026-08-19T16:26:01.996Z debug
+🪵  Writing logs to "/home/user/.config/.wrangler/logs/wrangler-2026-08-19_16-26-01_752.log"
+---
+
+--- 2026-08-19T16:26:01.996Z debug
+.env file not found at "/home/user/gdi-pages/.env". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-08-19T16:26:01.998Z debug
+.env file not found at "/home/user/gdi-pages/.env.local". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-08-19T16:26:02.007Z log
+
+ ⛅️ wrangler 4.86.0 (update available 4.124.0)
+──────────────────────────────────────────────
+---
+
+--- 2026-08-19T16:26:02.010Z debug
+Metrics dispatcher: Posting data {"deviceId":"1cb51ee9-e81e-4b35-a5ba-480700175537","event":"wrangler command started","timestamp":1787156762010,"properties":{"amplitude_session_id":1787156762008,"amplitude_event_id":0,"wranglerVersion":"4.86.0","wranglerMajorVersion":4,"wranglerMinorVersion":86,"wranglerPatchVersion":0,"osPlatform":"Linux","osVersion":"#1 SMP PREEMPT_DYNAMIC Fri Jul 17 14:31:34 UTC 2026","nodeVersion":20,"packageManager":"npm","isFirstUsage":false,"configFileType":"none","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":false,"hasAssets":false,"agent":null,"argsUsed":["compatibilityDate","port"],"argsCombination":"compatibilityDate, port","sanitizedCommand":"pages dev","sanitizedArgs":{}}}
+---
+
+--- 2026-08-19T16:26:02.099Z log
+✨ Compiled Worker successfully
+---
+
+--- 2026-08-19T16:26:02.386Z debug
+setting config
+---
+
+--- 2026-08-19T16:26:02.387Z debug
+Updating config... undefined undefined
+---
+
+--- 2026-08-19T16:26:02.411Z debug
+local dev variables file not found at ".dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-08-19T16:26:02.411Z debug
+.env file not found at "/home/user/gdi-pages/.env". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-08-19T16:26:02.411Z debug
+.env file not found at "/home/user/gdi-pages/.env.local". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-08-19T16:26:02.413Z log
+Your Worker has access to the following bindings:
+---
+
+--- 2026-08-19T16:26:02.413Z log
+Binding                                                                   Resource                  Mode
+---
+
+--- 2026-08-19T16:26:02.414Z log
+env.CF_PAGES ("1")                                                        Environment Variable      local
+---
+
+--- 2026-08-19T16:26:02.414Z log
+env.CF_PAGES_BRANCH ("local")                                             Environment Variable      local
+---
+
+--- 2026-08-19T16:26:02.414Z log
+env.CF_PAGES_COMMIT_SHA ("0000000000000000000000000000000000000...")      Environment Variable      local
+---
+
+--- 2026-08-19T16:26:02.414Z log
+env.CF_PAGES_URL ("https://00000000.gdi-index.pages.dev")                 Environment Variable      local
+---
+
+--- 2026-08-19T16:26:02.414Z log
+
+---
+
+--- 2026-08-19T16:26:02.434Z debug
+Metrics dispatcher: Posting data {"deviceId":"1cb51ee9-e81e-4b35-a5ba-480700175537","event":"run pages dev","timestamp":1787156762434,"properties":{"amplitude_session_id":1787156762433,"amplitude_event_id":0,"wranglerVersion":"4.86.0","wranglerMajorVersion":4,"wranglerMinorVersion":86,"wranglerPatchVersion":0,"osPlatform":"Linux","osVersion":"#1 SMP PREEMPT_DYNAMIC Fri Jul 17 14:31:34 UTC 2026","nodeVersion":20,"packageManager":"npm","isFirstUsage":false,"configFileType":"none","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":false,"hasAssets":false,"agent":null,"category":"Workers","os":"linux:x64"}}
+---
+
+--- 2026-08-19T16:26:02.532Z debug
+RemoteRuntimeController teardown beginning...
+---
+
+--- 2026-08-19T16:26:02.532Z debug
+RemoteRuntimeController teardown complete
+---
+
+--- 2026-08-19T16:26:02.549Z log
+⎔ Starting local server...
+---
+
+--- 2026-08-19T16:26:02.599Z debug
+[InspectorProxyWorker] handleProxyControllerIncomingMessage {"type":"reloadStart"}
+---
+
+--- 2026-08-19T16:26:02.662Z debug
+[InspectorProxyWorker] handleProxyControllerIncomingMessage {"type":"reloadComplete","proxyData":{"userWorkerUrl":{"protocol":"http:","hostname":"127.0.0.1","port":"33041"},"userWorkerInspectorUrl":{"protocol":"ws:","hostname":"127.0.0.1","port":"45615","pathname":"/core:user:gdi-index"},"userWorkerInnerUrlOverrides":{"protocol":"http:"},"headers":{"MF-Proxy-Shared-Secret":"31c91fc1-0d2a-4345-946e-b68d278899d3"},"liveReload":false,"proxyLogsToController":false}}
+---
+
+--- 2026-08-19T16:26:02.663Z debug
+[InspectorProxyWorker] reconnectRuntimeWebSocket
+---
+
+--- 2026-08-19T16:26:02.665Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE { id: 100000002, method: 'Network.enable', result: {} }
+---
+
+--- 2026-08-19T16:26:02.666Z debug
+[InspectorProxyWorker] NEW RUNTIME WEBSOCKET http://127.0.0.1:45615/core:user:gdi-index
+---
+
+--- 2026-08-19T16:26:02.669Z debug
+[InspectorProxyWorker] SEND TO DEVTOOLS {"method":"Runtime.executionContextsCleared"}
+---
+
+--- 2026-08-19T16:26:02.670Z debug
+[InspectorProxyWorker] RUNTIME WEBSOCKET OPENED
+---
+
+--- 2026-08-19T16:26:02.671Z debug
+[InspectorProxyWorker] SEND TO RUNTIME {"method":"Runtime.enable","id":100000001}
+---
+
+--- 2026-08-19T16:26:02.672Z debug
+[InspectorProxyWorker] SEND TO RUNTIME {"method":"Network.enable","id":100000002}
+---
+
+--- 2026-08-19T16:26:02.673Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.executionContextCreated',
+  params: {
+    context: {
+      id: 278640993,
+      origin: '',
+      name: 'Worker',
+      uniqueId: '-1776769986767946699.5565235647976646842'
+    }
+  }
+}
+---
+
+--- 2026-08-19T16:26:02.674Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE { id: 100000001, result: {} }
+---
+
+--- 2026-08-19T16:26:06.395Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 278640993,
+    timestamp: 1787156766393,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-08-19T16:26:06.401Z log
+POST Request for Login
+---
+
+--- 2026-08-19T16:26:06.408Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.requestWillBeSent',
+  params: {
+    requestId: '0',
+    loaderId: '',
+    request: {
+      url: 'https://www.googleapis.com/oauth2/v4/token',
+      method: 'POST',
+      headers: [Object],
+      mixedContentType: 'blockable',
+      initialPriority: 'VeryLow',
+      referrerPolicy: 'unsafe-url',
+      isLinkPreload: false
+    },
+    timestamp: 529.777,
+    wallTime: 1787156766.407,
+    initiator: { type: 'script', stack: [Object], lineNumber: 0 },
+    type: 'Fetch'
+  }
+}
+---
+
+--- 2026-08-19T16:26:06.424Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.responseReceived',
+  params: {
+    requestId: '0',
+    timestamp: 529.793,
+    type: 'XHR',
+    response: {
+      status: 400,
+      statusText: 'Bad Request',
+      headers: [Object],
+      mimeType: 'application/json',
+      connectionReused: false,
+      connectionId: 0,
+      remotePort: 0,
+      fromDiskCache: false,
+      fromServiceWorker: false,
+      encodedDataLength: 0,
+      protocol: 'http/1.1',
+      securityState: 'unknown'
+    }
+  }
+}
+---
+
+--- 2026-08-19T16:26:06.425Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.dataReceived',
+  params: {
+    requestId: '0',
+    timestamp: 529.793,
+    dataLength: 68,
+    encodedDataLength: 68
+  }
+}
+---
+
+--- 2026-08-19T16:26:07.227Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.requestWillBeSent',
+  params: {
+    requestId: '1',
+    loaderId: '',
+    request: {
+      url: 'https://www.googleapis.com/oauth2/v4/token',
+      method: 'POST',
+      headers: [Object],
+      mixedContentType: 'blockable',
+      initialPriority: 'VeryLow',
+      referrerPolicy: 'unsafe-url',
+      isLinkPreload: false
+    },
+    timestamp: 530.594,
+    wallTime: 1787156767.224,
+    initiator: { type: 'script', stack: [Object], lineNumber: 0 },
+    type: 'Fetch'
+  }
+}
+---
+
+--- 2026-08-19T16:26:07.243Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.responseReceived',
+  params: {
+    requestId: '1',
+    timestamp: 530.611,
+    type: 'XHR',
+    response: {
+      status: 400,
+      statusText: 'Bad Request',
+      headers: [Object],
+      mimeType: 'application/json',
+      connectionReused: false,
+      connectionId: 0,
+      remotePort: 0,
+      fromDiskCache: false,
+      fromServiceWorker: false,
+      encodedDataLength: 0,
+      protocol: 'http/1.1',
+      securityState: 'unknown'
+    }
+  }
+}
+---
+
+--- 2026-08-19T16:26:07.243Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.dataReceived',
+  params: {
+    requestId: '1',
+    timestamp: 530.611,
+    dataLength: 68,
+    encodedDataLength: 68
+  }
+}
+---
+
+--- 2026-08-19T16:26:08.845Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.requestWillBeSent',
+  params: {
+    requestId: '2',
+    loaderId: '',
+    request: {
+      url: 'https://www.googleapis.com/oauth2/v4/token',
+      method: 'POST',
+      headers: [Object],
+      mixedContentType: 'blockable',
+      initialPriority: 'VeryLow',
+      referrerPolicy: 'unsafe-url',
+      isLinkPreload: false
+    },
+    timestamp: 532.213,
+    wallTime: 1787156768.843,
+    initiator: { type: 'script', stack: [Object], lineNumber: 0 },
+    type: 'Fetch'
+  }
+}
+---
+
+--- 2026-08-19T16:26:08.860Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.responseReceived',
+  params: {
+    requestId: '2',
+    timestamp: 532.228,
+    type: 'XHR',
+    response: {
+      status: 400,
+      statusText: 'Bad Request',
+      headers: [Object],
+      mimeType: 'application/json',
+      connectionReused: false,
+      connectionId: 0,
+      remotePort: 0,
+      fromDiskCache: false,
+      fromServiceWorker: false,
+      encodedDataLength: 0,
+      protocol: 'http/1.1',
+      securityState: 'unknown'
+    }
+  }
+}
+---
+
+--- 2026-08-19T16:26:08.860Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.dataReceived',
+  params: {
+    requestId: '2',
+    timestamp: 532.228,
+    dataLength: 68,
+    encodedDataLength: 68
+  }
+}
+---
+
+--- 2026-08-19T16:26:11.266Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.loadingFinished',
+  params: {
+    requestId: '2',
+    timestamp: 534.632,
+    encodedDataLength: 68,
+    cfResponse: {
+      body: 'ewogICJlcnJvciI6ICJpbnZhbGlkX2dyYW50IiwKICAiZXJyb3JfZGVzY3JpcHRpb24iOiAiQmFkIFJlcXVlc3QiCn0=',
+      base64Encoded: true
+    }
+  }
+}
+---
+
+--- 2026-08-19T16:26:11.268Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.loadingFinished',
+  params: {
+    requestId: '1',
+    timestamp: 534.632,
+    encodedDataLength: 68,
+    cfResponse: {
+      body: 'ewogICJlcnJvciI6ICJpbnZhbGlkX2dyYW50IiwKICAiZXJyb3JfZGVzY3JpcHRpb24iOiAiQmFkIFJlcXVlc3QiCn0=',
+      base64Encoded: true
+    }
+  }
+}
+---
+
+--- 2026-08-19T16:26:11.269Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.loadingFinished',
+  params: {
+    requestId: '0',
+    timestamp: 534.632,
+    encodedDataLength: 68,
+    cfResponse: {
+      body: 'ewogICJlcnJvciI6ICJpbnZhbGlkX2dyYW50IiwKICAiZXJyb3JfZGVzY3JpcHRpb24iOiAiQmFkIFJlcXVlc3QiCn0=',
+      base64Encoded: true
+    }
+  }
+}
+---
+
+--- 2026-08-19T16:26:11.278Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.requestWillBeSent',
+  params: {
+    requestId: '3',
+    loaderId: '',
+    request: {
+      url: 'https://www.googleapis.com/oauth2/v4/token',
+      method: 'POST',
+      headers: [Object],
+      mixedContentType: 'blockable',
+      initialPriority: 'VeryLow',
+      referrerPolicy: 'unsafe-url',
+      isLinkPreload: false
+    },
+    timestamp: 534.647,
+    wallTime: 1787156771.277,
+    initiator: { type: 'script', stack: [Object], lineNumber: 0 },
+    type: 'Fetch'
+  }
+}
+---
+
+--- 2026-08-19T16:26:11.294Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.responseReceived',
+  params: {
+    requestId: '3',
+    timestamp: 534.663,
+    type: 'XHR',
+    response: {
+      status: 400,
+      statusText: 'Bad Request',
+      headers: [Object],
+      mimeType: 'application/json',
+      connectionReused: false,
+      connectionId: 0,
+      remotePort: 0,
+      fromDiskCache: false,
+      fromServiceWorker: false,
+      encodedDataLength: 0,
+      protocol: 'http/1.1',
+      securityState: 'unknown'
+    }
+  }
+}
+---
+
+--- 2026-08-19T16:26:11.294Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.dataReceived',
+  params: {
+    requestId: '3',
+    timestamp: 534.663,
+    dataLength: 68,
+    encodedDataLength: 68
+  }
+}
+---
+
+--- 2026-08-19T16:26:12.096Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.requestWillBeSent',
+  params: {
+    requestId: '4',
+    loaderId: '',
+    request: {
+      url: 'https://www.googleapis.com/oauth2/v4/token',
+      method: 'POST',
+      headers: [Object],
+      mixedContentType: 'blockable',
+      initialPriority: 'VeryLow',
+      referrerPolicy: 'unsafe-url',
+      isLinkPreload: false
+    },
+    timestamp: 535.464,
+    wallTime: 1787156772.094,
+    initiator: { type: 'script', stack: [Object], lineNumber: 0 },
+    type: 'Fetch'
+  }
+}
+---
+
+--- 2026-08-19T16:26:12.123Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.responseReceived',
+  params: {
+    requestId: '4',
+    timestamp: 535.492,
+    type: 'XHR',
+    response: {
+      status: 400,
+      statusText: 'Bad Request',
+      headers: [Object],
+      mimeType: 'application/json',
+      connectionReused: false,
+      connectionId: 0,
+      remotePort: 0,
+      fromDiskCache: false,
+      fromServiceWorker: false,
+      encodedDataLength: 0,
+      protocol: 'http/1.1',
+      securityState: 'unknown'
+    }
+  }
+}
+---
+
+--- 2026-08-19T16:26:12.124Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.dataReceived',
+  params: {
+    requestId: '4',
+    timestamp: 535.492,
+    dataLength: 68,
+    encodedDataLength: 68
+  }
+}
+---
+
+--- 2026-08-19T16:26:12.664Z debug
+[InspectorProxyWorker] SEND TO RUNTIME {"method":"Runtime.getIsolateId","id":100000003}
+---
+
+--- 2026-08-19T16:26:12.665Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE { id: 100000003, result: { id: 'be7cc2af876c09ad' } }
+---
+
+--- 2026-08-19T16:26:13.726Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.requestWillBeSent',
+  params: {
+    requestId: '5',
+    loaderId: '',
+    request: {
+      url: 'https://www.googleapis.com/oauth2/v4/token',
+      method: 'POST',
+      headers: [Object],
+      mixedContentType: 'blockable',
+      initialPriority: 'VeryLow',
+      referrerPolicy: 'unsafe-url',
+      isLinkPreload: false
+    },
+    timestamp: 537.094,
+    wallTime: 1787156773.724,
+    initiator: { type: 'script', stack: [Object], lineNumber: 0 },
+    type: 'Fetch'
+  }
+}
+---
+
+--- 2026-08-19T16:26:13.861Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.responseReceived',
+  params: {
+    requestId: '5',
+    timestamp: 537.23,
+    type: 'XHR',
+    response: {
+      status: 400,
+      statusText: 'Bad Request',
+      headers: [Object],
+      mimeType: 'application/json',
+      connectionReused: false,
+      connectionId: 0,
+      remotePort: 0,
+      fromDiskCache: false,
+      fromServiceWorker: false,
+      encodedDataLength: 0,
+      protocol: 'http/1.1',
+      securityState: 'unknown'
+    }
+  }
+}
+---
+
+--- 2026-08-19T16:26:13.862Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.dataReceived',
+  params: {
+    requestId: '5',
+    timestamp: 537.23,
+    dataLength: 68,
+    encodedDataLength: 68
+  }
+}
+---
+
+--- 2026-08-19T16:26:16.266Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.loadingFinished',
+  params: {
+    requestId: '5',
+    timestamp: 539.633,
+    encodedDataLength: 68,
+    cfResponse: {
+      body: 'ewogICJlcnJvciI6ICJpbnZhbGlkX2dyYW50IiwKICAiZXJyb3JfZGVzY3JpcHRpb24iOiAiQmFkIFJlcXVlc3QiCn0=',
+      base64Encoded: true
+    }
+  }
+}
+---
+
+--- 2026-08-19T16:26:16.267Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.loadingFinished',
+  params: {
+    requestId: '4',
+    timestamp: 539.634,
+    encodedDataLength: 68,
+    cfResponse: {
+      body: 'ewogICJlcnJvciI6ICJpbnZhbGlkX2dyYW50IiwKICAiZXJyb3JfZGVzY3JpcHRpb24iOiAiQmFkIFJlcXVlc3QiCn0=',
+      base64Encoded: true
+    }
+  }
+}
+---
+
+--- 2026-08-19T16:26:16.267Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Network.loadingFinished',
+  params: {
+    requestId: '3',
+    timestamp: 539.634,
+    encodedDataLength: 68,
+    cfResponse: {
+      body: 'ewogICJlcnJvciI6ICJpbnZhbGlkX2dyYW50IiwKICAiZXJyb3JfZGVzY3JpcHRpb24iOiAiQmFkIFJlcXVlc3QiCn0=',
+      base64Encoded: true
+    }
+  }
+}
+---

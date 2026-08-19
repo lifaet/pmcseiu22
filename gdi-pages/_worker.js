@@ -48,12 +48,15 @@ const blocked_asn = []; // add ASN numbers from http://www.bgplookingglass.com/l
 const CDN_VERSION = '2.5.9'; // auto-updated by npm run build
 const authConfig = {
   "siteName": "GDI Test", // Website name
-  // The three values below are FALLBACKS — they get overridden on every
-  // request by the CLIENT_ID / CLIENT_SECRET / REFRESH_TOKEN environment
-  // variables you set in Pages -> Settings -> Variables and Secrets.
-  "client_id": env.CLIENT_ID, // Client id from Google Cloud Console
-  "client_secret": env.CLIENT_SECRET, // Client Secret from Google Cloud Console
-  "refresh_token": env.REFRESH_TOKEN, // Authorize token
+  // ── Google credentials ──────────────────────────────────────────
+  // Intentionally EMPTY: the real values are read from the secrets
+  // CLIENT_ID / CLIENT_SECRET / REFRESH_TOKEN set in
+  // Pages -> Settings -> Variables and Secrets  (or via
+  // `wrangler pages secret put`). NEVER commit credentials to git —
+  // GitHub's secret scanning rejects the push anyway.
+  "client_id": "", // Client id from Google Cloud Console  (secret: CLIENT_ID)
+  "client_secret": "", // Client Secret from Google Cloud Console (secret: CLIENT_SECRET)
+  "refresh_token": "", // OAuth refresh token (secret: REFRESH_TOKEN)
   "service_account": false, // true if you're using Service Account instead of user account
   "service_account_json": randomserviceaccount, // don't touch this one
   "files_list_page_size": 100,
@@ -1016,10 +1019,34 @@ async function handleRequest(request) {
   }
 
   if (gds.length === 0) {
-    for (let i = 0; i < authConfig.roots.length; i++) {
-      const gd = new googleDrive(authConfig, i);
-      await gd.init();
-      gds.push(gd);
+    try {
+      for (let i = 0; i < authConfig.roots.length; i++) {
+        const gd = new googleDrive(authConfig, i);
+        await gd.init();
+        gds.push(gd);
+      }
+    } catch (err) {
+      // Show a readable error page instead of a bare 500 so the
+      // problem (usually bad Google credentials) is obvious.
+      const msg = (err && err.message) ? err.message : String(err);
+      return new Response(`<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Setup error — ${authConfig.siteName}</title></head>
+<body style="font-family:system-ui,-apple-system,sans-serif;background:#0f1115;color:#e8e8e8;margin:0;padding:40px 20px;display:flex;justify-content:center">
+<div style="max-width:640px;width:100%">
+  <h2 style="margin-top:0">⚠️ Google Drive API error</h2>
+  <p>Could not authenticate with Google. The most common cause is an expired/revoked <b>refresh_token</b> (Google error: <code>invalid_grant</code>).</p>
+  <p><b>Fix:</b> get fresh credentials from the official generator
+     <a href="https://bdi-generator.hashhackers.com" style="color:#4da3ff">bdi-generator.hashhackers.com</a>,
+     then paste the new <code>client_id</code>, <code>client_secret</code>, <code>refresh_token</code>
+     into <code>authConfig</code> in <code>_worker.js</code> (or update the
+     <code>CLIENT_ID</code> / <code>CLIENT_SECRET</code> / <code>REFRESH_TOKEN</code> secrets in
+     Pages → Settings → Variables and Secrets) and redeploy.</p>
+  <pre style="background:#1a1d24;border:1px solid #333;border-radius:8px;padding:12px 16px;overflow:auto;font-size:13px;color:#ff9d9d">${String(msg).replace(/</g, '&lt;')}</pre>
+</div>
+</body></html>`, {
+        status: 500,
+        headers: { 'Content-Type': 'text/html; charset=utf-8' }
+      });
     }
     const tasks = [];
     gds.forEach(gd => {
@@ -1414,6 +1441,13 @@ async function getAccessToken() {
 }
 
 async function fetchAccessToken() {
+  if (!authConfig.service_account) {
+    // Credentials come from Cloudflare secrets (CLIENT_ID / CLIENT_SECRET / REFRESH_TOKEN).
+    // If they are missing, fail with a clear message instead of a cryptic Google 400.
+    if (!authConfig.client_id || !authConfig.client_secret || !authConfig.refresh_token) {
+      throw new Error('Google credentials are not configured. Set the CLIENT_ID, CLIENT_SECRET and REFRESH_TOKEN secrets in Pages -> Settings -> Variables and Secrets, then redeploy.');
+    }
+  }
   const url = "https://www.googleapis.com/oauth2/v4/token";
   const headers = {
     'Content-Type': 'application/x-www-form-urlencoded'

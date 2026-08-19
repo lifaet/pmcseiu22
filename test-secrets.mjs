@@ -64,14 +64,14 @@ const check = (n, c, x = '') => { c ? (pass++, console.log('  PASS ' + n + (x ? 
   check('C1 token request used env REFRESH_TOKEN', c && c.get('refresh_token') === 'ENV-REFRESH-777', c && c.get('refresh_token'));
 }
 
-// --- Case 2: no env -> hardcoded fallbacks still work (fresh module instance) ---
+// --- Case 2: no env -> hardcoded fallbacks are GONE; expect clear error page ---
 {
   const getCaptured = makeFetchHarness();
   const mod = await import('./gdi-pages/_worker.js?case=fallback');
   const res = await mod.default.fetch(new Request('https://demo.pages.dev/', cookie), {}, {});
-  check('C2 page loads without env', res.status === 200, 'status=' + res.status);
-  const c = getCaptured();
-  check('C2 fallback client_id used', c && c.get('client_id') === '58094879805-4654k2k5nqdid5bavft7fvea5u9po0t1.apps.googleusercontent.com', c && c.get('client_id'));
+  const body = await res.text();
+  check('C2 no env -> clear missing-credentials error', res.status === 500 && body.includes('Google credentials are not configured'), 'status=' + res.status);
+  check('C2 no Google token call made', getCaptured() === null, String(getCaptured()));
 }
 
 console.log(`\nRESULT: ${pass} passed, ${fail} failed`);
