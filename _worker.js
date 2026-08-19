@@ -47,7 +47,7 @@ const blocked_region = ['']; // add regional codes seperated by comma, eg. ['IN'
 const blocked_asn = []; // add ASN numbers from http://www.bgplookingglass.com/list-of-autonomous-system-numbers, eg. [16509, 12345]
 const CDN_VERSION = '2.5.9'; // auto-updated by npm run build
 const authConfig = {
-  "siteName": "GDI Test", // Website name
+  "siteName": "IUPMCSE22", // Website name
   // ── Google credentials ──────────────────────────────────────────
   // Intentionally EMPTY: the real values are read from the secrets
   // CLIENT_ID / CLIENT_SECRET / REFRESH_TOKEN set in
@@ -85,12 +85,13 @@ const authConfig = {
       "password": "admin123",
     }
   ],
-  "roots":{
+  "roots": [      {
         "id": "1lw4nykvjTl5HIvLn3Mf_7Qm1yzCFY82g",
         "name": "MSC-CSE-IU-Materials \u{1F513}",
         "slug": "msc",
         "protect_file_link": false
-      }
+      },
+  ]
 };
 const crypto_base_key = "3225f86e99e205347b4310e437253bfd"; // Example 256 bit key used, generate your own.
 const hmac_base_key = "4d1fbf294186b82d74fff2494c04012364200263d6a36123db0bd08d6be1423c"; // Example 256 bit key used, generate your own.
@@ -104,9 +105,9 @@ const GDOC_EXPORT_FORMATS = {
 const uiConfig = {
   "theme": "darkly", // switch between themes, default set to slate, select from https://gitlab.com/GoogleDriveIndex/Google-Drive-Index
   "version": CDN_VERSION, // auto-updated by build script — get latest code using generator at https://bdi-generator.hashhackers.com
-  "debug_mode": true, // set to true to show a debug panel in the footer with API requests, errors, and page info
+  "debug_mode": false, // set to true to show a debug panel in the footer with API requests, errors, and page info
   // If you're using Image then set to true, If you want text then set it to false
-  "logo_image": true, // true if you're using image link in next option.
+  "logo_image": false, // true if you're using image link in next option.
   "logo_height": "", // only if logo_image is true
   "logo_width": "100px", // only if logo_image is true
   "favicon": 'https://cdn.jsdelivr.net/npm/@googledrive/index@' + CDN_VERSION + '/images/favicon.ico',
@@ -129,11 +130,11 @@ const uiConfig = {
   "path_nav_alert_class": "alert alert-primary", // https://getbootstrap.com/docs/4.0/components/alerts/#examples
   "file_view_alert_class": "alert alert-danger", // https://getbootstrap.com/docs/4.0/components/alerts/#examples
   "file_count_alert_class": "alert alert-secondary", // https://getbootstrap.com/docs/4.0/components/alerts/#examples
-  "contact_link": "https://telegram.dog/Telegram", // Link to Contact Button on Menu
+  "contact_link": "https://lifaet.github.io", // Link to Contact Button on Menu
   "copyright_year": new Date().getFullYear(), // auto-detected current year
-  "company_name": "The Bay Index", // Name next to copyright
-  "company_link": "https://telegram.dog/Telegram", // link of copyright name
-  "credit": true, // Set this to true to give us credit
+  "company_name": "CDN-ZIM", // Name next to copyright
+  "company_link": "https://telegram.dog/lifaet", // link of copyright name
+  "credit": false, // Set this to true to give us credit
   "display_size": true, // Set this to false to hide display file size
   "display_time": false, // Set this to false to hide display modified time for folder and files
   "display_download": true, // Set this to false to hide download icon for folder and files on main index
