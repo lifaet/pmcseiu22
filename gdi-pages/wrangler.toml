@@ -1,0 +1,28 @@
+# Cloudflare Pages config for GDI-JS.
+# Required for: `npx wrangler pages dev .` (local testing) and CLI deploys.
+# Drag-and-drop dashboard deploys ignore this file — keep it anyway.
+name = "gdi-index"
+compatibility_date = "2025-08-01"
+pages_build_output_dir = "."
+
+# ---------------------------------------------------------------------
+# Secrets — set via the dashboard (Settings -> Variables and Secrets)
+# or CLI:  npx wrangler pages secret put CLIENT_ID --project-name gdi-index
+#          npx wrangler pages secret put CLIENT_SECRET --project-name gdi-index
+#          npx wrangler pages secret put REFRESH_TOKEN --project-name gdi-index
+# ---------------------------------------------------------------------
+
+# ---------------------------------------------------------------------
+# Only needed if you switch login_database to "KV" or "D1" in _worker.js:
+#
+# login_database = "KV"  -> create a KV namespace, then uncomment:
+# [[kv_namespaces]]
+# binding = "ENV"
+# id = "PASTE_KV_NAMESPACE_ID"
+#
+# login_database = "D1"  -> create a D1 database, then uncomment:
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "gdi_users"
+# database_id = "PASTE_D1_DATABASE_ID"
+# ---------------------------------------------------------------------

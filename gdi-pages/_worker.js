@@ -6,21 +6,27 @@
 // ============================================================
 // CLOUDFLARE PAGES ENTRY POINT (module syntax — required by Pages)
 // This replaces the original `addEventListener('fetch', ...)`
-// at the bottom of the file. Just deploy this file as-is.
+// at the bottom of the file.
 //
-// SECRETS: set CLIENT_ID, CLIENT_SECRET and REFRESH_TOKEN in
-// Pages -> Settings -> Variables and Secrets (toggle "Encrypt"
-// on the last two). The values below in authConfig are only
-// fallbacks and get overridden on every request.
+// IMPORTANT: this file MUST sit at the project ROOT (next to
+// wrangler.toml). It will NOT work inside a `functions/` folder.
+//
+// SECRETS (optional): set CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN
+// in Pages -> Settings -> Variables and Secrets. The hardcoded
+// values in authConfig below are fallbacks, so the site also
+// works without them.
 // ============================================================
 export default {
   async fetch(request, env) {
     // Pages passes variables/secrets via `env` instead of globals.
     if (env) {
-      // Google OAuth credentials (set in Pages -> Settings -> Variables and Secrets)
-      if (env.CLIENT_ID) authConfig.client_id = env.CLIENT_ID;
-      if (env.CLIENT_SECRET) authConfig.client_secret = env.CLIENT_SECRET;
-      if (env.REFRESH_TOKEN) authConfig.refresh_token = env.REFRESH_TOKEN;
+      // Strip whitespace and surrounding quotes — dashboard values
+      // are often pasted as "value" including the quotes.
+      const clean = v => typeof v === 'string' ? v.trim().replace(/^["']+|["']+$/g, '') : v;
+      // Google OAuth credentials (Pages -> Settings -> Variables and Secrets)
+      if (env.CLIENT_ID) authConfig.client_id = clean(env.CLIENT_ID);
+      if (env.CLIENT_SECRET) authConfig.client_secret = clean(env.CLIENT_SECRET);
+      if (env.REFRESH_TOKEN) authConfig.refresh_token = clean(env.REFRESH_TOKEN);
       // KV / D1 bindings (login_database: "KV" / "D1")
       if (env.ENV !== undefined) globalThis.ENV = env.ENV; // KV namespace
       if (env.DB !== undefined) globalThis.DB = env.DB;     // D1 database
@@ -45,7 +51,10 @@ const authConfig = {
   // The three values below are FALLBACKS — they get overridden on every
   // request by the CLIENT_ID / CLIENT_SECRET / REFRESH_TOKEN environment
   // variables you set in Pages -> Settings -> Variables and Secrets.
- "service_account": false, // true if you're using Service Account instead of user account
+  "client_id": env.CLIENT_ID, // Client id from Google Cloud Console
+  "client_secret": env.CLIENT_SECRET, // Client Secret from Google Cloud Console
+  "refresh_token": env.REFRESH_TOKEN, // Authorize token
+  "service_account": false, // true if you're using Service Account instead of user account
   "service_account_json": randomserviceaccount, // don't touch this one
   "files_list_page_size": 100,
   "search_result_list_page_size": 100,
